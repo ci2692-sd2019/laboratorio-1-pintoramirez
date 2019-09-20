@@ -1,6 +1,15 @@
-import insertion
+# 
+# Fecha: 19-09-2019
+# Integrantes: Daniel Pinto
+#			   Daniela Ramirez
+#
+# Algoritmo de testeo: ordenamiento Insertion Sort
+
+# Programa:
+
 import tkinter as tk
-from tkinter import messagebox  
+from tkinter import messagebox
+import insertion
 
 #We define function composition in order to use it as an argument to the map function
 def funcComp (f,g):
@@ -30,7 +39,7 @@ class Window:
 		fileIn = open(self.e1.get(),"r")
 		data = fileIn.readlines()
 		fileIn.close()
-		result = insertion.insertion(list(map (float, data)))
+		result = insertion.InsertionSort(list(map (int, data)))
 		fileOut = open("result.txt", "w")
 		fileOut.writelines(list(map (aux,result) ))
 		fileOut.close()
